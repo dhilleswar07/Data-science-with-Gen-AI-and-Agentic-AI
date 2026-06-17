@@ -1,0 +1,18 @@
+git init
+
+git status
+
+git add .
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
+git remote -v
+
+git branch -M main
+git push -u origin main
+
+git clone https://github.com/dhilleswar07/repository-name.git
+
+git status
+git remote -v
