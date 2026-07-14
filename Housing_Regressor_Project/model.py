@@ -60,26 +60,8 @@ for name, model in models.items():
 # convert results to DataFrame and save to CSV
 results_df = pd.DataFrame(results)
 results_df.to_csv("model_evaluation_results.csv", index=False)
-print("models have been trained and saved as pickle files. Evaluation results have been saved to model.")
-<<<<<<< HEAD
-  
+
+print("Models have been trained and saved as pickle files.")
+print("Evaluation results have been saved to model_evaluation_results.csv")
     
 
-
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 8fad7b2 (Add Housing Regressor Project)
