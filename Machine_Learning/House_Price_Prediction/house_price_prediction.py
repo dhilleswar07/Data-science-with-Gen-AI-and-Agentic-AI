@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -60,4 +61,68 @@ bias = regressor.score(X_train, y_train)
 bias
 
 variance = regressor.score(X_test, y_test)
+=======
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+dataset = pd.read_csv(r"E:\DATASCIENCE WITH GEN AI & AGENTIC AI\House_data.csv")
+
+X = dataset.iloc[:, dataset.columns != 'price']
+y = dataset['price']
+
+X = pd.get_dummies(X,dtype=int)
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(X_train,y_train)
+
+y_pred = regressor.predict(X_test)
+
+m = regressor.coef_
+print(m)
+
+c = regressor.intercept_
+print(c)
+
+#X = np.append(arr=np.full((21613,1), 527019).astype(int), values=X, axis=1)
+X = np.append(arr=np.ones((X.shape[0],1)).astype(int),
+              values=X,
+              axis=1) 
+
+import statsmodels.api as sm 
+X_opt = X[:, [0, 1,2, 3, 4, 5, 6, 7, 8, 9, 10,
+              11, 12, 13, 14, 15, 16, 17, 18, 19, 20,21]]
+#OrdinaryLeastSquares
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary() 
+
+import statsmodels.api as sm 
+X_opt = X[:, [0, 1,2, 3, 4, 5, 6, 7, 8, 9, 10,
+              11, 12, 13, 14, 15, 16, 17, 18, 19,21]]
+#OrdinaryLeastSquares
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary() 
+
+import statsmodels.api as sm 
+X_opt = X[:, [0, 1,2, 3, 4, 5, 6, 7, 8, 9, 10,
+              11, 12, 13, 14, 15, 16, 17, 18, 19]]
+#OrdinaryLeastSquares
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary() 
+
+import statsmodels.api as sm
+X_opt = X[:, [0, 1, 2, 3, 4, 5, 7, 8, 9, 10,
+              11, 12, 13, 14, 15, 16, 17, 18, 19]]
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()
+
+bias = regressor.score(X_train, y_train)
+bias
+
+variance = regressor.score(X_test, y_test)
+>>>>>>> 636be038976bcf3ea94ab492f6734339dd6b7845
 variance
