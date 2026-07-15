@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -61,7 +60,6 @@ bias = regressor.score(X_train, y_train)
 bias
 
 variance = regressor.score(X_test, y_test)
-=======
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -124,5 +122,4 @@ bias = regressor.score(X_train, y_train)
 bias
 
 variance = regressor.score(X_test, y_test)
->>>>>>> 636be038976bcf3ea94ab492f6734339dd6b7845
 variance
